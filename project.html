@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -62,13 +63,13 @@
       padding: 20px;
     }
 
-    .header h1 {
+    .page-header h1 {
       font-size: 24px;
       color: #333;
       margin-bottom: 20px;
     }
 
-    .header h1 span {
+    .page-header h1 span {
       color: #007bff;
     }
 
@@ -151,6 +152,7 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2000;
     }
 
     .modal-content {
@@ -178,112 +180,107 @@
     }
 
     .loader {
-        border: 8px solid #f3f3f3; /* Light grey background */
-        border-top: 8px solid #3498db; /* Blue color for the rotating part */
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        animation: spin 2s linear infinite;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1000;
-    }
-    
-    /* Keyframe for spinning animation */
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #3498db;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 2s linear infinite;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3000;
     }
 
-    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
-    <div class="loader" id="loader"></div>
+  <div class="loader" id="loader"></div>
 
-<header>
-  <div class="logo">
-    <img src="/JeremyPortfolio/img/jeremy.jpg" alt="Personal Logo"/>
-    <span>Jeremy</span>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="project.html">Project Completion</a></li>
-      <li><a href="language.html">Language</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <div class="logo">
+      <img src="/JeremyPortfolio/img/jeremy.jpg" alt="Personal Logo"/>
+      <span>Jeremy</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="project.html">Project Completion</a></li>
+        <li><a href="language.html">Language</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="container">
-  <div class="header">
-    <h1> <span>Project Completion</span></h1>
-  </div>
-  <div class="categories">
-    <!-- Categories -->
-    <div class="category-card">
-      <h3>Rural Connect</h3>
-      <p><i class="fas fa-cog"></i> Bridging Healthcare gaps through telemedicine</p>
-      <img src="/JeremyPortfolio/img/Ruralconnect.png" alt="RuralConnect Logo"/>
-      <a href="#" class="view-description" data-title="Rural Connect System"
-         data-description="Rural Connect is a student-led initiative from the University of Cebu – Main Campus, dedicated to improving healthcare accessibility in barangays. By optimizing logistics, the project ensures efficient delivery of essential medicines and supplies from CityHealth to local communities. Through technology and innovation, Rural Connect aims to reduce delays, support local health units, and create a healthier, more connected society.">View Description</a>
+  <main class="container">
+    <div class="page-header">
+      <h1><span>Project Completion</span></h1>
+    </div>
+    <div class="categories">
+      <div class="category-card">
+        <h3>Rural Connect</h3>
+        <p><i class="fas fa-cog"></i> Bridging Healthcare gaps through telemedicine</p>
+        <img src="/JeremyPortfolio/img/Ruralconnect.png" alt="Screenshot of Rural Connect system"/>
+        <a href="#" class="view-description"
+           data-title="Rural Connect System"
+           data-description="Rural Connect is a student-led initiative from the University of Cebu – Main Campus, dedicated to improving healthcare accessibility in barangays. By optimizing logistics, the project ensures efficient delivery of essential medicines and supplies from CityHealth to local communities. Through technology and innovation, Rural Connect aims to reduce delays, support local health units, and create a healthier, more connected society.">
+          View Description
         </a>
-        </div>
-    <div class="category-card">
-      <h3>ERPAT</h3>
-      <p><i class="fas fa-cog"></i> Empowerment and Reaffirmation of Paternal Abilities Registration Form</p>
-      <img src="/JeremyPortfolio/img/Erpat.png" alt="Erpat Logo"/>
-      <a href="#" class="view-description" data-title="ERPAT"
-         data-description=" The Empowerment and Reaffirmation of Paternal Abilities Registration Form is a basic registration form used to collect personal details from fathers who wish to participate in programs or activities focused on strengthening their parenting skills and involvement. It serves as an initial step to enroll in workshops, support groups, or other related services.">View Description</a>
+      </div>
+
+      <div class="category-card">
+        <h3>ERPAT</h3>
+        <p><i class="fas fa-cog"></i> Empowerment and Reaffirmation of Paternal Abilities Registration Form</p>
+        <img src="/JeremyPortfolio/img/Erpat.png" alt="Screenshot of ERPAT registration form"/>
+        <a href="#" class="view-description"
+           data-title="ERPAT"
+           data-description="The Empowerment and Reaffirmation of Paternal Abilities Registration Form is a basic registration form used to collect personal details from fathers who wish to participate in programs or activities focused on strengthening their parenting skills and involvement. It serves as an initial step to enroll in workshops, support groups, or other related services.">
+          View Description
         </a>
-        </div>
+      </div>
+    </div>
+  </main>
 
-  
+  <div id="modal" class="modal" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modal-title">Project Title</h3>
+      <p id="modal-description">This is the project description.</p>
+    </div>
   </div>
-</div>
 
+  <script>
+    const modal = document.getElementById("modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDescription = document.getElementById("modal-description");
+    const closeModal = document.querySelector(".close");
 
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3 id="modal-title">Project Title</h3>
-    <p id="modal-description">This is the project description.</p>
-  </div>
-</div>
-
-<script>
-  const modal = document.getElementById("modal");
-  const modalTitle = document.getElementById("modal-title");
-  const modalDescription = document.getElementById("modal-description");
-  const closeModal = document.querySelector(".close");
-
-  document.querySelectorAll(".view-description").forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      modalTitle.textContent = link.getAttribute("data-title");
-      modalDescription.textContent = link.getAttribute("data-description");
-      modal.style.display = "block";
+    document.querySelectorAll(".view-description").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        modalTitle.textContent = link.getAttribute("data-title");
+        modalDescription.textContent = link.getAttribute("data-description");
+        modal.style.display = "block";
+      });
     });
-  });
 
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  window.addEventListener("click", (event) => {
-    if (event.target === modal) {
+    closeModal.addEventListener("click", () => {
       modal.style.display = "none";
-    }
-  });
-</script>
+    });
 
-<script>
-    // Hide loader after page has fully loaded
-    window.onload = function() {
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    window.onload = function () {
       document.getElementById("loader").style.display = "none";
     };
   </script>
